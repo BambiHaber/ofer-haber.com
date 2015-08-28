@@ -1,0 +1,213 @@
+@import "reset.less";
+
+section#title {
+  width: 100%;
+  height: 78px;
+  background: #6E98A6;
+  .toolini {
+    background: url('../img/Toyoshi-mini.png');
+    margin-right: 19px;
+    position: relative;
+    top: -6px;
+    width: 100px;
+    height: 95px;
+    float: left;
+    zoom: 0.7;
+    -moz-transform: scale(0.7);
+
+  }
+  & > h1 {
+    width: 970px;
+    margin: 0 auto 0 auto;
+    font-weight: bold;
+    color: white;
+    padding: 10px;
+    font-size: 30px;
+    & > span {
+      margin-top: 10px;
+      display: inline-block;
+      &:nth-child(4) {
+        font-weight: normal;
+        font-style: oblique;
+        font-size: 15px;
+        color: #EDEDED;
+        position: relative;
+        top: -12px;
+
+      }
+    }
+    .hive {
+      display: block;
+      float: right;
+      position: relative;
+      margin-top: -37px;
+      .row {
+        float: left;
+        clear: both;
+        margin-top: 10px;
+        div {
+          float: left;
+        }
+      }
+    }
+  }
+  .square {
+    float: right;
+    width: 20px;
+    height: 20px;
+    float: right;
+    opacity: 0.8;
+    -o-transition: .4s;
+    -ms-transition: .4s;
+    -moz-transition: .4s;
+    -webkit-transition: .4s;
+    transition: .4s;
+    cursor: pointer;
+    margin-right: 6px;
+    margin-left: 6px;
+    position: relative;
+    top: -15px;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+section#extras {
+  width: 100%;
+  height: 28px;
+  background: #8abed0;
+  .optionsContainer {
+    width: 970px;
+    margin: 0 auto;
+    display: block;
+    line-height: 28px;
+
+    .popOption {
+      float: left;
+      padding-left: 10px;
+      padding-right: 10px;
+      background: #99d3e7;
+      transition: 1s;
+      -webkit-transition: 1s;
+      &:hover {
+        cursor: pointer;
+        filter: invert(100%);
+        -webkit-filter: invert(100%);
+      }
+    }
+  }
+}
+
+section#content {
+  padding: 10px;
+  width: 970px;
+  margin: 12px auto 0 auto;
+
+  .cvDescription {
+    display: block;
+    width: 100%;
+    clear: both;
+    float: left;
+    border-bottom: 3px dashed #ededed;
+    margin-bottom: 17px;
+    .logo {
+      float: left;
+      .companyLogo {
+
+        height: 30px;
+        width: 30px;
+        padding: 10px;
+        border: 1px solid #c6c6c6;
+        margin-right: 10px;
+        border-radius: 100%;
+        background: no-repeat center center;
+        &.waves {
+          background-image: url(../img/companies/waves.png)
+        }
+        &.driivz {
+          background-image: url(../img/companies/driivz.png)
+        }
+        &.bforex {
+          background-image: url(../img/companies/bforex.png)
+        }
+        &.omni {
+          background-image: url(../img/companies/omni.png)
+        }
+      }
+    }
+
+    .position {
+      width: 900px;
+      margin-bottom: 30px;
+      height: 40px;
+      opacity: 0.5;
+      -o-transition: .8s;
+      -ms-transition: .8s;
+      -moz-transition: .8s;
+      -webkit-transition: .8s;
+      transition: .8s;
+      overflow: hidden;
+      margin-top: 8px;
+      /* IE COMPATABILITY */
+      float: left;
+      &:hover {
+        opacity: 1;
+        height: 280px;
+        transform: skewX(0.8deg);
+      }
+
+      .companyName {
+        float: left;
+        margin-right: 20px;
+        font-size: 20px;
+      }
+      .roleTimeRange {
+        margin-bottom: 10px;
+        padding-bottom: 12px;
+        display: block;
+        width: 100%;
+        clear: both;
+        float: left;
+        color: #747474;
+        border-bottom: 1px solid #DDD;
+        .role {
+          float: left;
+        }
+        .timeRange {
+          float: right;
+        }
+      }
+      .description {
+        color: #747474;
+        clear: both;
+        p {
+          padding: 12px;
+          line-height: 22px;
+          color: #A86004;
+        }
+      }
+    }
+  }
+}
+
+body:not(:-moz-handler-blocked) #title h1 .toolini {
+  margin-top: -13px;
+  margin-right: 0px;
+}
+
+section#footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 3px;
+  border-top: 1px dashed #A86004;
+  background: white;
+
+  .details {
+    width: 970px;
+    margin: 0 auto 0 auto;
+    color: #6E98A6;
+    text-align: center;
+  }
+}

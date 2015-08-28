@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ofer Haber - CV</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/underscore.js"></script>
+    <script type="text/javascript" src="js/backbone.js"></script>
+    <script type="text/javascript" src="js/global.js"></script>
+    <script type="text/javascript" src="js/com/oferHaber/position/Model.js"></script>
+    <script type="text/javascript" src="js/com/oferHaber/position/Collection.js"></script>
+    <script type="text/javascript" src="js/com/oferHaber/PageView.js"></script>
+    <script type="text/javascript" src="js/com/oferHaber/PageModel.js"></script>
+    <script type="text/javascript" src="js/com/oferHaber/Page.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            new com.oferHaber.Page();
+        });
+    </script>
+</head>
+<body>
+<section id="title">
+    <h1>
+        <div class="toolini"></div>
+        <span>Ofer Haber</span> <br/>
+        <span> Front end development </span>
+
+        <div class="hive">
+            <div class="row">
+                <div class="square fa fa-phone" id="phone"></div>
+                <div class="square fa fa-location-arrow" id="address"></div>
+            </div>
+            <div class="row">
+                <div class="square fa fa-linkedin" id="linkedIn"></div>
+                <div class="square fa fa-envelope" id="emailIcon"></div>
+            </div>
+        </div>
+    </h1>
+</section>
+<section id="extras">
+    <div class="optionsContainer">
+        <div class="popOption canaryMidi">
+            <div class="fa fa-music"></div>
+            Canary MIDI experiment
+        </div>
+        <div class="popOption github">
+            <div class="fa fa-github"></div>
+            My github
+        </div>
+    </div>
+</section>
+<section id="content">
+
+</section>
+<section id="footer">
+    <div class="details">
+        Ofer Haber | Borochov 35, Tel-Aviv, Israel | +972-52-3712465
+    </div>
+</section>
+<script id="positionTemplate" type="text/template">
+    <div class="cvDescription">
+        <div class="logo">
+            <a href="<%= link %>" target="_blank">
+                <div class="companyLogo <%= image %>"></div>
+            </a>
+        </div>
+        <section class="position">
+            <div class="details">
+                <div class="companyName"><%= companyName %></div>
+
+                <div class="roleTimeRange">
+                    <div class="role"><%= role %></div>
+                    <div class="timeRange"><%= timeRange %></div>
+                </div>
+                <div class="description"><%= description %></div>
+            </div>
+        </section>
+    </div>
+</script>
+</body>
+</html>
