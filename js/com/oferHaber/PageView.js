@@ -4,8 +4,8 @@ namespace("com.oferHaber").PageView = Backbone.View.extend({
         'click #address': 'onAddressClick',
         'click #linkedIn': 'onLinkedInClick',
         'click #emailIcon': 'onEmailIconClick',
-        'click .popOption.canaryMidi': 'onCanaryMidiClick'
-
+        'click .popOption.canaryMidi': 'onCanaryMidiClick',
+        'click .popOption.github': 'onGithubClick'
     },
     initialize: function () {
         _.bindAll(this, "render", "onLinkedInClick");
@@ -41,5 +41,9 @@ namespace("com.oferHaber").PageView = Backbone.View.extend({
 
     onCanaryMidiClick: function () {
         window.open("http://vkeyboard.ofer-haber.com");
+    },
+
+    onGithubClick:function () {
+        window.open("http://www.github.com/StormCat/")
     }
 });
