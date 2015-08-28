@@ -1,4 +1,7 @@
 # ofer-haber.com
+
+My website, arranged in an MVC like style.<br/>
+
 Libraries used:<br/>
 <ul>
 <li>jQuery</li>
