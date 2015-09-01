@@ -4,17 +4,20 @@ namespace("com.oferHaber").PageView = Backbone.View.extend({
         'click #address': 'onAddressClick',
         'click #linkedIn': 'onLinkedInClick',
         'click #emailIcon': 'onEmailIconClick',
+        'click .popOption.cv': 'onCvClick',
         'click .popOption.canaryMidi': 'onCanaryMidiClick',
         'click .popOption.github': 'onGithubClick'
     },
     initialize: function () {
         _.bindAll(this, "render", "onLinkedInClick");
+
         this.positionCollection = this.model.get("positionCollection");
         this.listenTo(this.positionCollection, "sync", this.render);
     },
 
     render: function () {
         $('#content', this.$el).empty();
+
         this.positionCollection.each(function (position) {
             $('#content').append(_.template($('#positionTemplate').html(), position.toJSON()));
         });
@@ -39,11 +42,15 @@ namespace("com.oferHaber").PageView = Backbone.View.extend({
         window.location.href = 'mailto:haber.ofer@gmail.com';
     },
 
+    onCvClick: function () {
+
+    },
+
     onCanaryMidiClick: function () {
         window.open("http://vkeyboard.ofer-haber.com");
     },
 
-    onGithubClick:function () {
-        window.open("http://www.github.com/StormCat/")
+    onGithubClick: function () {
+        window.open("http://www.github.com/StormCat/");
     }
 });

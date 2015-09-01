@@ -1,3 +1,4 @@
+util.print: Use console.log instead
 /*!
  *  Font Awesome 4.3.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -6,8 +7,8 @@
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url('../fonts/fontawesome-webfont.eot?v=4.3.0');
-  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.3.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.3.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.3.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
+  src: url('../assets/fonts/fontawesome-webfont.eot?v=4.3.0');
+  src: url('../assets/fonts/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('../assets/fonts/fontawesome-webfont.woff2?v=4.3.0') format('woff2'), url('../assets/fonts/fontawesome-webfont.woff?v=4.3.0') format('woff'), url('../assets/fonts/fontawesome-webfont.ttf?v=4.3.0') format('truetype'), url('../assets/fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -1930,7 +1931,7 @@ section#title {
   background: #6E98A6;
 }
 section#title .toolini {
-  background: url('../img/Toyoshi-mini.png');
+  background: url('../images/Toyoshi-mini.png');
   margin-right: 19px;
   position: relative;
   top: -6px;
@@ -2013,6 +2014,9 @@ section#extras .optionsContainer .popOption {
   transition: 1s;
   -webkit-transition: 1s;
 }
+section#extras .optionsContainer .popOption div {
+  margin-right: 8px;
+}
 section#extras .optionsContainer .popOption:hover {
   cursor: pointer;
   filter: invert(100%);
@@ -2044,16 +2048,16 @@ section#content .cvDescription .logo .companyLogo {
   background: no-repeat center center;
 }
 section#content .cvDescription .logo .companyLogo.waves {
-  background-image: url(../img/companies/waves.png);
+  background-image: url(../images/companies/waves.png);
 }
 section#content .cvDescription .logo .companyLogo.driivz {
-  background-image: url(../img/companies/driivz.png);
+  background-image: url(../images/companies/driivz.png);
 }
 section#content .cvDescription .logo .companyLogo.bforex {
-  background-image: url(../img/companies/bforex.png);
+  background-image: url(../images/companies/bforex.png);
 }
 section#content .cvDescription .logo .companyLogo.omni {
-  background-image: url(../img/companies/omni.png);
+  background-image: url(../images/companies/omni.png);
 }
 section#content .cvDescription .position {
   width: 900px;
