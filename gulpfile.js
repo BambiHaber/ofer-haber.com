@@ -9,6 +9,9 @@ var minifyhtml = require('gulp-minify-html');
 var rename = require('gulp-rename');
 var child = require('child_process');
 var del = require('del');
+var livereload = require('gulp-livereload');
+
+
 var fs = require('fs');
 var rmdir = function(directories, callback) {
     if(typeof directories === 'string') {
@@ -60,6 +63,10 @@ gulp.task('scripts', function () {
         /* Website files */
         'src/js/com/oferHaber/position/Model.js',
         'src/js/com/oferHaber/position/Collection.js',
+
+        'src/js/com/oferHaber/tabs/cv/CvView.js',
+        'src/js/com/oferHaber/tabs/aboutMe/AboutMeView.js',
+
         'src/js/com/oferHaber/PageModel.js',
         'src/js/com/oferHaber/PageView.js',
         'src/js/com/oferHaber/Page.js'
@@ -101,28 +108,6 @@ gulp.task('clean', function (cb) {
 });
 
 gulp.task('default', ['clean'], function () {
-    gulp.start('html', 'styles', 'fonts', 'scripts', 'images', 'positions');
+    gulp.start('scripts', 'html', 'styles', 'fonts', 'images', 'positions');
 });
 
-/*
-
- // Watch
- gulp.task('watch', function() {
-
- // Watch .less files
- gulp.watch('src/css/!**!/!*.less', ['styles']);
-
- // Watch .js files
- gulp.watch('src/js/!**!/!*.js', ['scripts']);
-
- // Watch image files
- gulp.watch('src/images/!**!/!*', ['images']);
-
- // Create LiveReload server
- livereload.listen();
-
- // Watch any files in dist/, reload on change
- gulp.watch(['dist/!**']).on('change', livereload.changed);
-
- });
- */

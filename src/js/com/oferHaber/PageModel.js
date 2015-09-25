@@ -1,4 +1,5 @@
-namespace("com.oferHaber").PageModel = Backbone.Model.extend({
+(function () {
+    namespace("com.oferHaber").PageModel = Backbone.Model.extend({
     defaults: {
         positionCollection: null
     },
@@ -7,3 +8,4 @@ namespace("com.oferHaber").PageModel = Backbone.Model.extend({
     }
 
 });
+}());

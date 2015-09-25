@@ -5539,34 +5539,22 @@ namespace("com.oferHaber.position").Collection = Backbone.Collection.extend({
     model: com.oferHaber.position.Model,
     url: './assets/positions/Data.js'
 });
-namespace("com.oferHaber").PageModel = Backbone.Model.extend({
-    defaults: {
-        positionCollection: null
-    },
+namespace("com.oferHaber.tabs.cv").CvView = Backbone.View.extend({
+
     initialize: function () {
 
-    }
+        _.bindAll.apply(_, [this].concat(_.functions(this)));
 
-});
-namespace("com.oferHaber").PageView = Backbone.View.extend({
-    events: {
-        'click #phone': 'onPhoneClick',
-        'click #address': 'onAddressClick',
-        'click #linkedIn': 'onLinkedInClick',
-        'click #emailIcon': 'onEmailIconClick',
-        'click .popOption.cv': 'onCvClick',
-        'click .popOption.canaryMidi': 'onCanaryMidiClick',
-        'click .popOption.github': 'onGithubClick'
-    },
-    initialize: function () {
-        _.bindAll(this, "render", "onLinkedInClick");
+        this.positionCollection = new com.oferHaber.position.Collection();
 
-        this.positionCollection = this.model.get("positionCollection");
         this.listenTo(this.positionCollection, "sync", this.render);
+
+        this.positionCollection.fetch();
+
+        return this;
     },
 
     render: function () {
-        $('#content', this.$el).empty();
 
         this.positionCollection.each(function (position) {
             $('#content').append(_.template($('#positionTemplate').html(), position.toJSON()));
@@ -5592,10 +5580,6 @@ namespace("com.oferHaber").PageView = Backbone.View.extend({
         window.location.href = 'mailto:haber.ofer@gmail.com';
     },
 
-    onCvClick: function () {
-
-    },
-
     onCanaryMidiClick: function () {
         window.open("http://vkeyboard.ofer-haber.com");
     },
@@ -5604,17 +5588,126 @@ namespace("com.oferHaber").PageView = Backbone.View.extend({
         window.open("http://www.github.com/StormCat/");
     }
 });
-namespace("com.oferHaber").Page = Backbone.View.extend({
+namespace("com.oferHaber.tabs.aboutMe").AboutMeView = Backbone.View.extend({
+    template: $('#aboutMeTemplate').html(),
     initialize: function () {
-        console.log("Hey there..");
-        console.log("Checking me out?");
-        console.log("Enjoy ;)");
-        this.positionCollection = new com.oferHaber.position.Collection();
-        this.model = new com.oferHaber.PageModel({
-            positionCollection: this.positionCollection
-        });
-        this.view = new com.oferHaber.PageView({el: $('body'), model: this.model});
 
-        this.positionCollection.fetch();
+        _.bindAll.apply(_, [this].concat(_.functions(this)));
+        this.template = _.template($('#aboutMeTemplate').html());
+
+        this.render();
+        return this;
+    },
+
+    render: function () {
+
+        $('#content').append(this.template({}));
     }
 });
+(function () {
+    namespace("com.oferHaber").PageModel = Backbone.Model.extend({
+    defaults: {
+        positionCollection: null
+    },
+    initialize: function () {
+
+    }
+
+});
+}());
+(function () {
+
+    namespace("com.oferHaber").PageView = Backbone.View.extend({
+        events: {
+            'click #phone': 'onPhoneClick',
+            'click #address': 'onAddressClick',
+            'click #linkedIn': 'onLinkedInClick',
+            'click #emailIcon': 'onEmailIconClick',
+            'click .popOption.aboutMe': 'onAboutMeClick',
+            'click .popOption.cv': 'onCvClick',
+            'click .popOption.canaryMidi': 'onCanaryMidiClick',
+            'click .popOption.github': 'onGithubClick'
+        },
+        initialize: function () {
+            _.bindAll.apply(_, [this].concat(_.functions(this)));
+
+            this.$contentEl = $('#content', this.$el);
+            this.render();
+        },
+
+        render: function () {
+
+            /*
+             this.currentView = new com.oferHaber.tabs.cv.CvView();
+             */
+            this.currentView = new com.oferHaber.tabs.aboutMe.AboutMeView({
+                el: this.$contentEl
+            });
+        },
+
+
+        killCurrentView: function () {
+
+            this.currentView.undelegateEvents();
+            this.$contentEl.empty();
+            this.currentView.$el.removeData().unbind();
+        },
+        /**
+         * View events
+         */
+        onPhoneClick: function () {
+            window.open("skype:+972523712465?call");
+        },
+
+        onAddressClick: function () {
+            window.open("https://www.google.co.il/maps/place/%D7%91%D7%95%D7%A8%D7%95%D7%9B%D7%95%D7%91+35,+%D7%AA%D7%9C+%D7%90%D7%91%D7%99%D7%91+%D7%99%D7%A4%D7%95%E2%80%AD/@32.0711842,34.7778774,17z/data=!3m1!4b1!4m2!3m1!1s0x151d4b7f73b7f8a5:0xffb6aadd0d8f0652");
+        },
+
+        onLinkedInClick: function () {
+            window.open("http://www.linkedin.com/pub/ofer-haber/18/894/694");
+        },
+
+        onEmailIconClick: function () {
+            window.location.href = 'mailto:haber.ofer@gmail.com';
+        },
+
+        onAboutMeClick: function () {
+
+            this.killCurrentView();
+            this.currentView = new com.oferHaber.tabs.aboutMe.AboutMeView({
+                el: this.$contentEl
+            });
+        },
+
+        onCvClick: function () {
+
+            this.killCurrentView();
+            this.currentView = new com.oferHaber.tabs.cv.CvView({
+                el: this.$contentEl
+            });
+        },
+
+        onCanaryMidiClick: function () {
+            window.open("http://vkeyboard.ofer-haber.com");
+        },
+
+        onGithubClick: function () {
+            window.open("http://www.github.com/StormCat/");
+        }
+    });
+})();
+(function () {
+    namespace("com.oferHaber").Page = Backbone.View.extend({
+        initialize: function () {
+            console.log("Hey there..");
+            console.log("Checking me out?");
+            console.log("Enjoy ;) - the more readable version in my github: http://github.com/StormCat/");
+
+            this.model = new com.oferHaber.PageModel();
+            this.view = new com.oferHaber.PageView({
+                el: $('body'),
+                model: this.model
+            });
+        }
+    });
+}());

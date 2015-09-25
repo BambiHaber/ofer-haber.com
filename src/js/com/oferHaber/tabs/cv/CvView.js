@@ -1,10 +1,16 @@
 namespace("com.oferHaber.tabs.cv").CvView = Backbone.View.extend({
 
     initialize: function () {
-        _.bindAll(this, "render");
 
-        this.positionCollection = this.model.get("positionCollection");
+        _.bindAll.apply(_, [this].concat(_.functions(this)));
+
+        this.positionCollection = new com.oferHaber.position.Collection();
+
         this.listenTo(this.positionCollection, "sync", this.render);
+
+        this.positionCollection.fetch();
+
+        return this;
     },
 
     render: function () {
@@ -37,7 +43,7 @@ namespace("com.oferHaber.tabs.cv").CvView = Backbone.View.extend({
         window.open("http://vkeyboard.ofer-haber.com");
     },
 
-    onGithubClick:function () {
+    onGithubClick: function () {
         window.open("http://www.github.com/StormCat/");
     }
 });

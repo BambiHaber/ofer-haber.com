@@ -4,7 +4,7 @@
     <title>Ofer Haber</title>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="assets/js/main.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css?v=1"/>
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -34,19 +34,18 @@
 <section id="extras">
     <div class="optionsContainer">
 
-       <!-- <div class="popOption aboutMe">
+        <div class="popOption aboutMe">
             <div class="fa fa-info"></div>
             About me
         </div>
 
         <div class="popOption cv">
             <div class="fa fa-briefcase"></div>
-            My CV
+            Companies i worked with
         </div>
--->
         <div class="popOption canaryMidi">
             <div class="fa fa-music"></div>
-            Canary MIDI experiment
+            Web MIDI devices experiment
         </div>
 
         <div class="popOption github">
@@ -84,5 +83,22 @@
         </section>
     </div>
 </script>
+<script id="aboutMeTemplate" type="text/template">
+    <div class="aboutMeContainer">
+        <div class="left">
+            <img src="assets/images/sing-small.jpg"/>
+        </div>
+        <div class="right"><< Hey,</br> Thats me :)<br/>
+            Welcome to my website, it contains some stuff like:<br/>
+            * Places ive worked for/with
+            * Some links to code
+            * This lovley photo of me playing in a rehershal, i play synth/keyobards for a band called
+            <a href="www.turdpartyplugins.com">turd party plugins</a>, and music is another passion besides my software/web development thing.<br/>
+            I have been studying drums for the last 3 years and love good music in general ["pop", "rock", "jazz"] <-- yes it was an array.<br/>
+            Have fun looking around..
+        </div>
+    </div>
+</script>
+
 </body>
 </html>

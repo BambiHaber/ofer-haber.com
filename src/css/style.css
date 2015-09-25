@@ -1925,12 +1925,12 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-section#title {
+body section#title {
   width: 100%;
   height: 78px;
   background: #6E98A6;
 }
-section#title .toolini {
+body section#title .toolini {
   background: url('../images/Toyoshi-mini.png');
   margin-right: 19px;
   position: relative;
@@ -1941,7 +1941,7 @@ section#title .toolini {
   zoom: 0.7;
   -moz-transform: scale(0.7);
 }
-section#title > h1 {
+body section#title > h1 {
   width: 970px;
   margin: 0 auto 0 auto;
   font-weight: bold;
@@ -1949,11 +1949,11 @@ section#title > h1 {
   padding: 10px;
   font-size: 30px;
 }
-section#title > h1 > span {
+body section#title > h1 > span {
   margin-top: 10px;
   display: inline-block;
 }
-section#title > h1 > span:nth-child(4) {
+body section#title > h1 > span:nth-child(4) {
   font-weight: normal;
   font-style: oblique;
   font-size: 15px;
@@ -1961,21 +1961,21 @@ section#title > h1 > span:nth-child(4) {
   position: relative;
   top: -12px;
 }
-section#title > h1 .hive {
+body section#title > h1 .hive {
   display: block;
   float: right;
   position: relative;
   margin-top: -37px;
 }
-section#title > h1 .hive .row {
+body section#title > h1 .hive .row {
   float: left;
   clear: both;
   margin-top: 10px;
 }
-section#title > h1 .hive .row div {
+body section#title > h1 .hive .row div {
   float: left;
 }
-section#title .square {
+body section#title .square {
   width: 20px;
   height: 20px;
   float: right;
@@ -1991,21 +1991,21 @@ section#title .square {
   position: relative;
   top: -15px;
 }
-section#title .square:hover {
+body section#title .square:hover {
   opacity: 1;
 }
-section#extras {
+body section#extras {
   width: 100%;
   height: 28px;
   background: #8abed0;
 }
-section#extras .optionsContainer {
+body section#extras .optionsContainer {
   width: 970px;
   margin: 0 auto;
   display: block;
   line-height: 28px;
 }
-section#extras .optionsContainer .popOption {
+body section#extras .optionsContainer .popOption {
   float: left;
   padding-left: 10px;
   padding-right: 10px;
@@ -2014,20 +2014,20 @@ section#extras .optionsContainer .popOption {
   transition: 1s;
   -webkit-transition: 1s;
 }
-section#extras .optionsContainer .popOption div {
+body section#extras .optionsContainer .popOption div {
   margin-right: 8px;
 }
-section#extras .optionsContainer .popOption:hover {
+body section#extras .optionsContainer .popOption:hover {
   cursor: pointer;
   filter: invert(100%);
   -webkit-filter: invert(100%);
 }
-section#content {
+body section#content {
   padding: 10px;
   width: 970px;
   margin: 12px auto 0 auto;
 }
-section#content .cvDescription {
+body section#content .cvDescription {
   display: block;
   width: 100%;
   clear: both;
@@ -2035,10 +2035,10 @@ section#content .cvDescription {
   border-bottom: 3px dashed #ededed;
   margin-bottom: 17px;
 }
-section#content .cvDescription .logo {
+body section#content .cvDescription .logo {
   float: left;
 }
-section#content .cvDescription .logo .companyLogo {
+body section#content .cvDescription .logo .companyLogo {
   height: 30px;
   width: 30px;
   padding: 10px;
@@ -2047,19 +2047,19 @@ section#content .cvDescription .logo .companyLogo {
   border-radius: 100%;
   background: no-repeat center center;
 }
-section#content .cvDescription .logo .companyLogo.waves {
+body section#content .cvDescription .logo .companyLogo.waves {
   background-image: url(../images/companies/waves.png);
 }
-section#content .cvDescription .logo .companyLogo.driivz {
+body section#content .cvDescription .logo .companyLogo.driivz {
   background-image: url(../images/companies/driivz.png);
 }
-section#content .cvDescription .logo .companyLogo.bforex {
+body section#content .cvDescription .logo .companyLogo.bforex {
   background-image: url(../images/companies/bforex.png);
 }
-section#content .cvDescription .logo .companyLogo.omni {
+body section#content .cvDescription .logo .companyLogo.omni {
   background-image: url(../images/companies/omni.png);
 }
-section#content .cvDescription .position {
+body section#content .cvDescription .position {
   width: 900px;
   margin-bottom: 30px;
   height: 40px;
@@ -2074,17 +2074,17 @@ section#content .cvDescription .position {
   /* IE COMPATABILITY */
   float: left;
 }
-section#content .cvDescription .position:hover {
+body section#content .cvDescription .position:hover {
   opacity: 1;
   height: 280px;
   transform: skewX(0.8deg);
 }
-section#content .cvDescription .position .companyName {
+body section#content .cvDescription .position .companyName {
   float: left;
   margin-right: 20px;
   font-size: 20px;
 }
-section#content .cvDescription .position .roleTimeRange {
+body section#content .cvDescription .position .roleTimeRange {
   margin-bottom: 10px;
   padding-bottom: 12px;
   display: block;
@@ -2094,26 +2094,36 @@ section#content .cvDescription .position .roleTimeRange {
   color: #747474;
   border-bottom: 1px solid #DDD;
 }
-section#content .cvDescription .position .roleTimeRange .role {
+body section#content .cvDescription .position .roleTimeRange .role {
   float: left;
 }
-section#content .cvDescription .position .roleTimeRange .timeRange {
+body section#content .cvDescription .position .roleTimeRange .timeRange {
   float: right;
 }
-section#content .cvDescription .position .description {
+body section#content .cvDescription .position .description {
   color: #747474;
   clear: both;
 }
-section#content .cvDescription .position .description p {
+body section#content .cvDescription .position .description p {
   padding: 12px;
   line-height: 22px;
   color: #A86004;
 }
-body:not(:-moz-handler-blocked) #title h1 .toolini {
-  margin-top: -13px;
-  margin-right: 0px;
+body section#content .aboutMeContainer .left,
+body section#content .aboutMeContainer .right {
+  float: left;
+  width: 50%;
 }
-section#footer {
+body section#content .aboutMeContainer .left img {
+  width: 95%;
+}
+body section#content .aboutMeContainer .right {
+  line-height: 40px;
+  /*
+                float: left;
+                width: 50%;*/
+}
+body section#footer {
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -2121,9 +2131,13 @@ section#footer {
   border-top: 1px dashed #A86004;
   background: white;
 }
-section#footer .details {
+body section#footer .details {
   width: 970px;
   margin: 0 auto 0 auto;
   color: #6E98A6;
   text-align: center;
+}
+body:not(:-moz-handler-blocked) #title h1 .toolini {
+  margin-top: -13px;
+  margin-right: 0px;
 }
