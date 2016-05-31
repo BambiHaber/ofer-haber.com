@@ -1,4 +1,4 @@
-namespace("com.oferHaber.position").Model = Backbone.Model.extend({
+namespace("com.bambiHaber.position").Model = Backbone.Model.extend({
     defaults: {
         companyName: null,
         role: null,

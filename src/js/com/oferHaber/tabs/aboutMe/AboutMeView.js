@@ -1,4 +1,4 @@
-namespace("com.oferHaber.tabs.aboutMe").AboutMeView = Backbone.View.extend({
+namespace("com.bambiHaber.tabs.aboutMe").AboutMeView = Backbone.View.extend({
     template: $('#aboutMeTemplate').html(),
     initialize: function () {
 

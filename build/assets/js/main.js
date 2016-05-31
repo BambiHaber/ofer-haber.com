@@ -5527,7 +5527,7 @@ window.namespace = function (name, separator, container) {
     }
     return o;
 };
-namespace("com.oferHaber.position").Model = Backbone.Model.extend({
+namespace("com.bambiHaber.position").Model = Backbone.Model.extend({
     defaults: {
         companyName: null,
         role: null,
@@ -5535,17 +5535,17 @@ namespace("com.oferHaber.position").Model = Backbone.Model.extend({
         description: null
     }
 });
-namespace("com.oferHaber.position").Collection = Backbone.Collection.extend({
-    model: com.oferHaber.position.Model,
+namespace("com.bambiHaber.position").Collection = Backbone.Collection.extend({
+    model: com.bambiHaber.position.Model,
     url: './assets/positions/Data.js'
 });
-namespace("com.oferHaber.tabs.cv").CvView = Backbone.View.extend({
+namespace("com.bambiHaber.tabs.cv").CvView = Backbone.View.extend({
 
     initialize: function () {
 
         _.bindAll.apply(_, [this].concat(_.functions(this)));
 
-        this.positionCollection = new com.oferHaber.position.Collection();
+        this.positionCollection = new com.bambiHaber.position.Collection();
 
         this.listenTo(this.positionCollection, "sync", this.render);
 
@@ -5588,7 +5588,7 @@ namespace("com.oferHaber.tabs.cv").CvView = Backbone.View.extend({
         window.open("http://www.github.com/StormCat/");
     }
 });
-namespace("com.oferHaber.tabs.aboutMe").AboutMeView = Backbone.View.extend({
+namespace("com.bambiHaber.tabs.aboutMe").AboutMeView = Backbone.View.extend({
     template: $('#aboutMeTemplate').html(),
     initialize: function () {
 
@@ -5605,7 +5605,7 @@ namespace("com.oferHaber.tabs.aboutMe").AboutMeView = Backbone.View.extend({
     }
 });
 (function () {
-    namespace("com.oferHaber").PageModel = Backbone.Model.extend({
+    namespace("com.bambiHaber").PageModel = Backbone.Model.extend({
     defaults: {
         positionCollection: null
     },
@@ -5617,7 +5617,7 @@ namespace("com.oferHaber.tabs.aboutMe").AboutMeView = Backbone.View.extend({
 }());
 (function () {
 
-    namespace("com.oferHaber").PageView = Backbone.View.extend({
+    namespace("com.bambiHaber").PageView = Backbone.View.extend({
         events: {
             'click #phone': 'onPhoneClick',
             'click #address': 'onAddressClick',
@@ -5638,9 +5638,9 @@ namespace("com.oferHaber.tabs.aboutMe").AboutMeView = Backbone.View.extend({
         render: function () {
 
             /*
-             this.currentView = new com.oferHaber.tabs.cv.CvView();
+             this.currentView = new com.bambiHaber.tabs.cv.CvView();
              */
-            this.currentView = new com.oferHaber.tabs.aboutMe.AboutMeView({
+            this.currentView = new com.bambiHaber.tabs.aboutMe.AboutMeView({
                 el: this.$contentEl
             });
         },
@@ -5674,7 +5674,7 @@ namespace("com.oferHaber.tabs.aboutMe").AboutMeView = Backbone.View.extend({
         onAboutMeClick: function () {
 
             this.killCurrentView();
-            this.currentView = new com.oferHaber.tabs.aboutMe.AboutMeView({
+            this.currentView = new com.bambiHaber.tabs.aboutMe.AboutMeView({
                 el: this.$contentEl
             });
         },
@@ -5682,7 +5682,7 @@ namespace("com.oferHaber.tabs.aboutMe").AboutMeView = Backbone.View.extend({
         onCvClick: function () {
 
             this.killCurrentView();
-            this.currentView = new com.oferHaber.tabs.cv.CvView({
+            this.currentView = new com.bambiHaber.tabs.cv.CvView({
                 el: this.$contentEl
             });
         },
@@ -5697,14 +5697,14 @@ namespace("com.oferHaber.tabs.aboutMe").AboutMeView = Backbone.View.extend({
     });
 })();
 (function () {
-    namespace("com.oferHaber").Page = Backbone.View.extend({
+    namespace("com.bambiHaber").Page = Backbone.View.extend({
         initialize: function () {
             console.log("Hey there..");
             console.log("Checking me out?");
             console.log("Enjoy ;) - the more readable version in my github: http://github.com/StormCat/");
 
-            this.model = new com.oferHaber.PageModel();
-            this.view = new com.oferHaber.PageView({
+            this.model = new com.bambiHaber.PageModel();
+            this.view = new com.bambiHaber.PageView({
                 el: $('body'),
                 model: this.model
             });

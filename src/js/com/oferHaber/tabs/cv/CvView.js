@@ -1,10 +1,10 @@
-namespace("com.oferHaber.tabs.cv").CvView = Backbone.View.extend({
+namespace("com.bambiHaber.tabs.cv").CvView = Backbone.View.extend({
 
     initialize: function () {
 
         _.bindAll.apply(_, [this].concat(_.functions(this)));
 
-        this.positionCollection = new com.oferHaber.position.Collection();
+        this.positionCollection = new com.bambiHaber.position.Collection();
 
         this.listenTo(this.positionCollection, "sync", this.render);
 

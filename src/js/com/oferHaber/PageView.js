@@ -1,6 +1,6 @@
 (function () {
 
-    namespace("com.oferHaber").PageView = Backbone.View.extend({
+    namespace("com.bambiHaber").PageView = Backbone.View.extend({
         events: {
             'click #phone': 'onPhoneClick',
             'click #address': 'onAddressClick',
@@ -21,9 +21,9 @@
         render: function () {
 
             /*
-             this.currentView = new com.oferHaber.tabs.cv.CvView();
+             this.currentView = new com.bambiHaber.tabs.cv.CvView();
              */
-            this.currentView = new com.oferHaber.tabs.aboutMe.AboutMeView({
+            this.currentView = new com.bambiHaber.tabs.aboutMe.AboutMeView({
                 el: this.$contentEl
             });
         },
@@ -57,7 +57,7 @@
         onAboutMeClick: function () {
 
             this.killCurrentView();
-            this.currentView = new com.oferHaber.tabs.aboutMe.AboutMeView({
+            this.currentView = new com.bambiHaber.tabs.aboutMe.AboutMeView({
                 el: this.$contentEl
             });
         },
@@ -65,7 +65,7 @@
         onCvClick: function () {
 
             this.killCurrentView();
-            this.currentView = new com.oferHaber.tabs.cv.CvView({
+            this.currentView = new com.bambiHaber.tabs.cv.CvView({
                 el: this.$contentEl
             });
         },
