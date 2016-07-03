@@ -44,6 +44,6 @@ namespace("com.bambiHaber.tabs.cv").CvView = Backbone.View.extend({
     },
 
     onGithubClick: function () {
-        window.open("http://www.github.com/StormCat/");
+        window.open("http://www.github.com/BambiHaber/");
     }
 });
